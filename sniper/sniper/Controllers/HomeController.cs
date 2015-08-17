@@ -26,6 +26,12 @@ namespace sniper.Controllers
                 Title = "test"
             };
             var r = baseService.Insert<News>(news);
+            var list = new NewsService().GetList(1, 10);
+            foreach (var item in list)
+            {
+                item.Cont = "zyqTest";
+                baseService.Update<News>(item);
+            }
             return View();
         }
 

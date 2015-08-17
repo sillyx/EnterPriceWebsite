@@ -51,7 +51,7 @@ namespace sniper.service
             var o = t.GetType();
             var sBulider = new StringBuilder("update ");
             sBulider.Append(o.Name);
-            sBulider.Append("set ");
+            sBulider.Append(" set ");
             var id = "";
             var properties = o.GetProperties();
             foreach (var p in properties)

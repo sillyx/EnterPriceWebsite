@@ -1,5 +1,7 @@
 create database sniper
+go
 use sniper
+go
 
 --ĞÂÎÅ
 create table News

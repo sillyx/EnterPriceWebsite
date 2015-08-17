@@ -3,3 +3,8 @@ C:\Users\Administrator\Desktop\sniper\sniper.service\bin\Debug\sniper.service.pd
 C:\Users\Administrator\Desktop\sniper\sniper.service\obj\Debug\sniper.service.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\Desktop\sniper\sniper.service\obj\Debug\sniper.service.dll
 C:\Users\Administrator\Desktop\sniper\sniper.service\obj\Debug\sniper.service.pdb
+C:\Users\Administrator\Desktop\EnterPriceWebsite\sniper\sniper.service\bin\Debug\sniper.service.dll
+C:\Users\Administrator\Desktop\EnterPriceWebsite\sniper\sniper.service\bin\Debug\sniper.service.pdb
+C:\Users\Administrator\Desktop\EnterPriceWebsite\sniper\sniper.service\obj\Debug\sniper.service.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\EnterPriceWebsite\sniper\sniper.service\obj\Debug\sniper.service.dll
+C:\Users\Administrator\Desktop\EnterPriceWebsite\sniper\sniper.service\obj\Debug\sniper.service.pdb

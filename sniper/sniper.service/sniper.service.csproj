@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutUsService.cs" />
     <Compile Include="BaseService.cs" />
+    <Compile Include="CategoryService.cs" />
     <Compile Include="Models\AboutUs.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\ImageList.cs" />
@@ -49,7 +51,10 @@
     <Compile Include="Models\Service.cs" />
     <Compile Include="Models\Solution.cs" />
     <Compile Include="NewsService.cs" />
+    <Compile Include="ProductService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service.cs" />
+    <Compile Include="SolutionService.cs" />
     <Compile Include="SqlDBHelper.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
