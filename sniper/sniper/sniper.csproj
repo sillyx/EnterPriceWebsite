@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3E64EC0B-BFCC-4387-9C0E-F20355F33862}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>sniper</RootNamespace>
+    <AssemblyName>sniper</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Content\css\images\bg_loading_anim.gif" />
+    <Content Include="Content\css\images\drag_banner_arrow.gif.png" />
+    <Content Include="Content\css\images\ico_website.png" />
+    <Content Include="Content\css\images\lab.png" />
+    <Content Include="Content\css\images\nav_ico.png" />
+    <Content Include="Content\css\images\qq.png" />
+    <Content Include="Content\css\images\serv_ico.png" />
+    <Content Include="Content\css\images\serv_pic.png" />
+    <Content Include="Content\css\images\sprite_arrows.png" />
+    <Content Include="Content\css\images\top.png" />
+    <Content Include="Content\css\reset.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\images\1.png" />
+    <Content Include="Content\images\2.png" />
+    <Content Include="Content\images\3.png" />
+    <Content Include="Content\images\4.png" />
+    <Content Include="Content\images\5.png" />
+    <Content Include="Content\images\6.png" />
+    <Content Include="Content\images\7.png" />
+    <Content Include="Content\images\8.png" />
+    <Content Include="Content\images\banner_bg1.jpg" />
+    <Content Include="Content\images\banner_bg2.jpg" />
+    <Content Include="Content\images\banner_bg3.jpg" />
+    <Content Include="Content\images\banner_bg4.jpg" />
+    <Content Include="Content\images\banner_bg5.jpg" />
+    <Content Include="Content\images\banner_bg6.jpg" />
+    <Content Include="Content\images\banner_bg7.jpg" />
+    <Content Include="Content\images\banner_bg8.jpg" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\map.gif" />
+    <Content Include="Content\images\news.png" />
+    <Content Include="Content\images\qq.png" />
+    <Content Include="Content\Scripts\html5.js" />
+    <Content Include="Content\Scripts\jquery.1.8.2.min.js" />
+    <Content Include="Content\Scripts\jquery.plugin.min.js" />
+    <Content Include="Content\Scripts\killie6.js" />
+    <Content Include="Content\uploads\131029\1-13102922154B20.png" />
+    <Content Include="Content\uploads\131030\1-13103023093A15.png" />
+    <Content Include="Content\uploads\131031\1-1310312352421V.jpg" />
+    <Content Include="Content\uploads\131101\1-13110122115U92.png" />
+    <Content Include="Content\uploads\131101\1-1311012213054G.png" />
+    <Content Include="Content\uploads\131102\1-1311021SZNS.png" />
+    <Content Include="Content\uploads\131102\1-1311021T604P2.png" />
+    <Content Include="Content\uploads\131102\1-1311021TZ9347.png" />
+    <Content Include="Content\uploads\131102\1-1311021U52E46.png" />
+    <Content Include="Content\uploads\131102\1-131102201031320.png" />
+    <Content Include="Content\uploads\131102\1-131102201300426.png" />
+    <Content Include="Content\uploads\131102\1-131102202025522.png" />
+    <Content Include="Content\uploads\131102\1-131102205530Q6.png" />
+    <Content Include="Content\uploads\131102\1-13110221000L92.png" />
+    <Content Include="Content\uploads\131102\1-13110221023AO.jpg" />
+    <Content Include="Content\uploads\131102\1-131102210430T2.png" />
+    <Content Include="Content\uploads\131102\1-131102210K4H1.jpg" />
+    <Content Include="Content\uploads\131102\131102\1-131102193U1Q4.png" />
+    <Content Include="Content\uploads\allimg\131029\1-131029221612.png" />
+    <Content Include="Content\uploads\allimg\131029\1-131029221613-50.png" />
+    <Content Include="Content\uploads\allimg\131029\1-131029221613.png" />
+    <Content Include="Content\uploads\allimg\131030\1-131030230910.png" />
+    <Content Include="Content\uploads\allimg\131030\1-131030230Z9-50.png" />
+    <Content Include="Content\uploads\allimg\131030\1-131030230Z9.png" />
+    <Content Include="Content\uploads\allimg\131031\1-131031234923a2.png" />
+    <Content Include="Content\uploads\allimg\131102\1-131102193941-50.png" />
+    <Content Include="Content\uploads\allimg\131102\1-131102193941.png" />
+    <Content Include="Content\uploads\allimg\131102\1-131102193942.png" />
+    <Content Include="Content\uploads\allimg\131102\1-1311021T226.png" />
+    <Content Include="Content\uploads\allimg\131102\1-1311021T227-50.png" />
+    <Content Include="Content\uploads\allimg\131102\1-1311021T227.png" />
+    <Content Include="Content\uploads\allimg\131102\1-1311021T940-50.png" />
+    <Content Include="Content\uploads\allimg\131102\1-1311021T940.png" />
+    <Content Include="Content\uploads\allimg\131102\1-1311021T941-50.png" />
+    <Content Include="Content\uploads\allimg\131102\1-1311021T941.png" />
+    <Content Include="Content\uploads\allimg\131102\1-1311021TG1.jpg" />
+    <Content Include="Content\uploads\allimg\131102\1-1311021TG2-50.jpg" />
+    <Content Include="Content\uploads\allimg\131102\1-1311021TG2-51.jpg" />
+    <Content Include="Content\uploads\allimg\131102\1-1311021TG2.jpg" />
+    <Content Include="Content\uploads\allimg\131102\1-1311021UH9.png" />
+    <Content Include="Content\uploads\allimg\131102\1-1311021UI0.png" />
+    <Content Include="Content\uploads\allimg\131102\1-1311021Z103-lp.png" />
+    <Content Include="Content\uploads\allimg\131102\1-1311021Z103.png" />
+    <Content Include="Content\uploads\allimg\131102\1-1311021Z104-50.png" />
+    <Content Include="Content\uploads\allimg\131102\1-1311021Z104.png" />
+    <Content Include="Content\uploads\allimg\131102\1-131102201119.png" />
+    <Content Include="Content\uploads\allimg\131102\1-131102201120-50.png" />
+    <Content Include="Content\uploads\allimg\131102\1-131102201120.png" />
+    <Content Include="Content\uploads\allimg\131102\1-131102201121.png" />
+    <Content Include="Content\uploads\allimg\131102\1-131102201352-50.png" />
+    <Content Include="Content\uploads\allimg\131102\1-131102201352-51.png" />
+    <Content Include="Content\uploads\allimg\131102\1-131102201352.png" />
+    <Content Include="Content\uploads\allimg\131102\1-131102202125G2.png" />
+    <Content Include="Content\uploads\allimg\131102\1-131102205558.png" />
+    <Content Include="Content\uploads\allimg\131102\1-131102205559-50.png" />
+    <Content Include="Content\uploads\allimg\131102\1-131102205559.png" />
+    <Content Include="Content\uploads\allimg\131102\1-131102210017-50.png" />
+    <Content Include="Content\uploads\allimg\131102\1-131102210017.png" />
+    <Content Include="Content\uploads\allimg\131102\1-131102210018.png" />
+    <Content Include="Content\uploads\allimg\131102\1-131102210301.jpg" />
+    <Content Include="Content\uploads\allimg\131102\1-131102210302.jpg" />
+    <Content Include="Content\uploads\allimg\131102\1-131102210303.jpg" />
+    <Content Include="Content\uploads\allimg\131102\1-131102210508.jpg" />
+    <Content Include="Content\uploads\allimg\131102\1-131102210509-50.jpg" />
+    <Content Include="Content\uploads\allimg\131102\1-131102210509.jpg" />
+    <Content Include="Global.asax" />
+    <Content Include="sniper.sql" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_LayoutHome.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\sniper.service\sniper.service.csproj">
+      <Project>{0b1f57df-c87e-4789-a86a-5d7f5ff7d2f7}</Project>
+      <Name>sniper.service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>7254</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:7216/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

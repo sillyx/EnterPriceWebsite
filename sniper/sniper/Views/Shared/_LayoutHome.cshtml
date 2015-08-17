@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="/Content/css/style.css" type="text/css" media="all" /> 
+    <script type="text/javascript" src="/Content/Scripts/jquery.1.8.2.min.js"></script>
+    <script type="text/javascript" src="/Content/Scripts/jquery.plugin.min.js"></script>
+    <!--[if IE 6]>
+    <script type="text/javascript" src="/Content/Scripts/killie6.js"></script>
+    <![endif]--> 
+    <!--[if lt IE 9]><script type="text/javascript" src="/Content/Scripts/html5.js"></script><![endif]-->
+    <title>@ViewBag.Title</title>
+</head>
+<body id="ruifoxHome">
+    <header>
+        <div id="navbg"></div>
+        <div class="wrapper">
+            <h1 class="logo">
+                <a href="index.htm" title="建荣博客:www.njro168.com">
+                    <img src="/Content/images/logo.png" width="213" height="36" alt="建荣博客:www.njro168.com" />
+                </a>
+            </h1>
+            <nav>
+                <ul>
+                    <li class="home"><a href="index.htm">首页<span>网站首页！</span></a></li>
+                    <li class="about"><a href="about/index.htm" title="关于我们">关于<span>我们是谁？</span></a></li>
+                    <li class="service"><a href="service/index.htm" title="网站建设">服务<span>我们能做什么？</span></a></li>
+                    <li class="cases"><a href="case/index.htm" title="网页制作">案例<span>我们做过什么？</span></a></li>
+                    <li class="client"><a href="fangan/index.htm" title="解决方案">解决方案<span>我们有什么？</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+    <footer>
+        <div id="footerlink">
+            <nav class="wrapper">
+                <a href="index.htm">首页</a>
+                <a href="about/index.htm">关于</a>
+                <a href="service/index.htm">服务</a>
+                <a href="case/index.htm">案例</a>
+                <a href="fangan/index.htm">方案</a>
+                <a href="contact/index.htm">联系</a>
+                <a href="news/index.htm">新闻</a>
+                <a id="gotop" href="javascript:void(0)">top</a>
+            </nav>
+        </div>
+        <div id="footerinfo">
+            <div class="wrapper">
+                <h2>联系我们<strong>Contact</strong></h2>
+                <p>
+                    <a target="_blank" href="javascript:if(confirm('http://wpa.qq.com/msgrd?v=3&uin=429592913&site=qq&menu=yes'))window.location='http://wpa.qq.com/msgrd?v=3&uin=429592913&site=qq&menu=yes'"><img border="0" src="/Content/images/qq.png" alt="点击这里给我发消息" title="点击这里给我发消息" /></a><br />
+                    电话：400 8888 8888<br />
+                    传真：400 8888 8888<br />
+                    电子邮件：admin@unn114.com<br />
+                    公司地址：重庆市某某某某某某某某某<br />
+                    备案编号：蜀ICP备000000001<br />
+                    Copyright © 2013 - 2014 luidea.com All rights reserved.
+                </p>
+                @*<img src="/Content/images/map.gif" id="homemap" width="258" height="190" alt="公司位置" />*@
+            </div>
+            @*<div class="links">
+                <h2>友情链接<strong>Links</strong></h2>
+                <p>
+                    <ul>
+                        <li>
+                            <a href="http://www.njro168.com/" target='_blank'>建荣博客</a>
+                        </li>
+                        <li>
+                            <a href="http://www.njro168.com/" target='_blank'>建荣博客</a>
+                        </li>
+                        <li>
+                            <a href="http://www.njro168.com/" target='_blank'>建荣博客</a>
+                        </li>
+                        <li>
+                            <a href="http://www.njro168.com/" target='_blank'>建荣博客</a>
+                        </li>
+                    </ul>
+                </p>
+            </div>*@
+        </div>
+    </footer>
+</body>
+</html>
+<script type="text/javascript">
+    $(function () {
+        $("#gotop").click(function () { $('body,html').animate({ scrollTop: 0 }, 500); })
+    })
+</script>
