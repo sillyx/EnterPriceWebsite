@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+@model sniper.service.Models.News
+<section id="shownews">
+    <div class="cat_title">
+        <div class="wrapper">
+            <h2><strong>NEWS</strong>新闻</h2>
+            <p>
+                最近正在折腾...<br />
+                Recently is to do ...
+            </p>
+        </div>
+    </div>
+    <div class="category">
+        <div class="wrapper">
+            <h1>@Model.Title</h1>
+            <span>发表于:@Model.CreateTime </span>
+        </div>
+    </div>
+    <article>
+        <div class="wrapper" id="detailed">
+            @Model.Cont
+        </div>
+        <div class="wrapper related">
+            <h3 style="border-bottom:none;">
+                @*你可能还对下面的新闻感兴趣*@
+                <div class="share">
+                    <!-- Baidu Button BEGIN -->
+                    <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"> <a class="bds_qzone"></a> <a class="bds_tsina"></a> <a class="bds_tqq"></a> <a class="bds_renren"></a> <a class="bds_t163"></a> <span class="bds_more">更多</span> <a class="shareCount"></a> </div>
+                    <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=0"></script>
+                    <script type="text/javascript" id="bdshell_js"></script>
+                    <script type="text/javascript">
+                        document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date() / 3600000)
+                    </script>
+                    <!-- Baidu Button END -->
+                </div>
+            </h3>
+            @*<ul>
+
+                    <li><a href="23.html" tppabs="http://mc18.eatdou.com/news/hynews/23.html">网络营销最重要的一步，你做到了吗？</a></li>
+                    <li><a href="9.html" tppabs="http://mc18.eatdou.com/news/hynews/9.html">百度免费＂发武器＂ 布局移动互联网</a></li>
+                    <li><a href="8.html" tppabs="http://mc18.eatdou.com/news/hynews/8.html">企业网站已经悄悄的转变成了一种网络营销应用</a></li>
+
+                </ul>*@
+        </div>
+        <div id="case_footer">
+            <div class="wrapper showother"> <a class="backlist" href="javascript:void(0);" onclick="window.history.back();">返回案例列表</a> </div>
+        </div>
+    </article>
+</section>
+
+<script type="text/javascript" src="/Content/Scripts/jquery.plugin.min.js"></script>

@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+@model List<sniper.service.Models.News>
+<section id="newslist">
+    <div class="cat_title">
+        <div class="wrapper">
+            <h2><strong>NEWS</strong>新闻</h2>
+            <p>最近正在折腾...<br />Recently is to do ...</p>
+
+        </div>
+    </div>
+    <ul class="news wrapper">
+        @{
+            foreach (var item in Model)
+            {
+                <li style="height:94px;">
+                    @*<a href="hynews/23.html" tppabs="http://mc18.eatdou.com/news/hynews/23.html"><img src="../uploads/131102/1-131102210K4H1.jpg" tppabs="http://mc18.eatdou.com/uploads/131102/1-131102210K4H1.jpg" data-original="" alt="网络营销最重要的一步，你做到了吗？" /></a>*@
+                    <div class="newslist">
+                        <a target="_blank" href="/News/Details?id=@item.Id">@item.Title</a>
+                        <span>发表于:@item.CreateTime</span>
+                        <p>
+                            @(item.Cont.Length > 85 ? item.Cont.Substring(0, 85) + "...." : item.Cont)
+                        </p>
+                    </div>
+                </li>
+            }
+        }
+
+    </ul>
+    @*<div class="dede_pages">
+            <ul class="pagelist">
+                <li><span class="pageinfo">共 <strong>1</strong>页<strong>4</strong>条记录</span></li>
+
+            </ul>
+        </div>*@
+
+
+
+</section>
+
+<script type="text/javascript" src="/Content/Scripts/jquery.plugin.min.js"></script>

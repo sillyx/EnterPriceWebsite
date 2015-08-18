@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}@model sniper.service.Models.Service
+<section id="single">
+    <!-- 查找子栏目  -->
+    <div class="cat_title">
+        <div class="wrapper">
+            <h2><strong>SERVICE</strong>服务</h2>
+            <p>我们能做什么？<br />What can we do?</p>
+        </div>
+    </div>
+    <div class="category">
+        <div class="wrapper">
+            <h1>服务</h1>
+
+            @*<ul class="catbtn">
+
+                <li><a href="web/index.htm">品牌网站建设</a></li>
+
+                <li><a href="seo/index.htm">seo优化推广</a></li>
+
+                <li><a href="yunying/index.htm">网站运营托管</a></li>
+
+            </ul>*@
+        </div>
+    </div>
+    <article class="serv_detailed">
+        <div id="detailed">
+            @Model.Cont
+        </div>
+        <div id="case_footer"></div>
+    </article>
+</section>
+
+<script type="text/javascript" src="/Content/Scripts/jquery.plugin.min.js"></script>
+

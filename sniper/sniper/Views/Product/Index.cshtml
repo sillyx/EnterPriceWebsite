@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+@model List<sniper.service.Models.Category>
+<section id="caseslist">
+    <div class="cat_title">
+        <div class="wrapper">
+            <h2><strong>CASES</strong>案例</h2>
+            <p>
+                我们的作品，他们的故事<br />
+                Our work, their stories
+            </p>
+        </div>
+    </div>
+    <div id="filter">
+        <div class="wrapper">
+            <ul>
+                @{
+                    foreach (var m in Model)
+                    {
+
+                        <li><a href="javascript:;" id="@m.Id">@m.Name</a></li>
+                    }
+                }
+            </ul>
+
+        </div>
+    </div>
+    <div id="product">
+        @{
+            Html.RenderAction("SearchResult");
+        }
+    </div>
+    @*<div class="dede_pages">
+            <ul class="pagelist">
+                <li><span class="pageinfo">共 <strong>1</strong>页<strong>15</strong>条记录</span></li>
+
+            </ul>
+        </div>*@
+</section>
+
+
+<script type="text/javascript" src="/Content/Scripts/jquery.plugin.min.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+
+        $('.wrapper ul li').delegate('a', 'click', function () {
+            var id = $(this).attr('id');
+            $('.wrapper ul li a').removeClass('cur');
+            $(this).addClass('cur');
+            $('#product').load('@Url.Action("SearchResult")', { categoryId: id });
+        });
+        //Nav Start
+        $("header>div>nav>ul>li>a").hover(function () {
+            $(this).parent().stop(false, true).animate({ "background-position-x": "6px", opacity: "0.7" }, { duration: "normal", easing: "easeOutElastic" });
+        }, function () {
+            $(this).parent().stop(false, true).animate({ "background-position-x": "10px", opacity: "1" }, { duration: "normal", easing: "easeOutElastic" });
+        });
+        //<!--- 案例 ---->
+        //Nav Start
+        $("header>div>nav>ul>li>a").hover(function () {
+            $(this).parent().stop(false, true).animate({ "background-position-x": "6px", opacity: "0.7" }, { duration: "normal", easing: "easeOutElastic" });
+        }, function () {
+            $(this).parent().stop(false, true).animate({ "background-position-x": "10px", opacity: "1" }, { duration: "normal", easing: "easeOutElastic" });
+        });
+        //Nav End
+
+        //Cases Start
+        $("#caseslist .cases li").live({
+            mouseenter: function () {
+                $("p", this).stop(false, true).slideDown("normal", "easeOutQuad");
+            }, mouseleave: function () {
+                $("p", this).stop(false, true).slideUp("normal", "easeOutQuad");
+            }
+        });
+        $("#caseslist .cases li img").lazyload({ effect: "fadeIn", failurelimit: 10 });
+        //Cases End
+
+        //]]>
+    })
+</script>

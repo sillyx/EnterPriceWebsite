@@ -76,7 +76,7 @@ header nav li span{display:block;color:#999;font-size:11px;-webkit-text-size-adj
 #news .newsad{position:absolute;top:15px;left:15px;}
 #news ul{position:absolute;width:620px;top:15px;right:15px;}
 #news ul li{position:relative;border-bottom:1px dotted #ccc;padding:12px 0;}
-#news ul li .newslist{position:absolute;width:510px;right:0;top:10px;}
+#news ul li .newslist{position:absolute;width:510px;/*right:0;*/top:10px;}
 #news ul li .newslist a{font:bold 16px/30px Microsoft YaHei;color:#444;}
 #news ul li .newslist span{display:block;line-height:20px;color:#999;}
 /*footer*/
@@ -179,7 +179,7 @@ footer{clear:both;}
 #newslist .news{padding:15px 0;}
 #newslist .news li{position:relative;border-bottom:1px dotted #ccc;padding:10px 0;}
 #newslist .news li img{width:94px;height:94px;}
-#newslist .news li .newslist{position:absolute;width:876px;right:0;top:10px;}
+#newslist .news li .newslist{position:absolute;width:876px;/*right:0;*/top:10px;}
 #newslist .news li .newslist a{font:bold 16px/30px Microsoft YaHei;color:#444;}
 #newslist .news li .newslist span{display:block;line-height:20px;color:#999;}
 /*SubPage Shownews*/

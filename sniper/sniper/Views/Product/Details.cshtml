@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+@model Tuple<sniper.service.Models.Product, List<sniper.service.Models.ImageList>>
+<section id="show_cases">
+    <div class="cat_title">
+        <div class="wrapper">
+            <h2><strong>CASES</strong>案例</h2>
+            <p>我们的作品，他们的故事<br />Our work, their stories </p>
+        </div>
+    </div>
+    <article>
+        <div class="wrapper">
+            <div id="overview">
+                <div class="overview_bg"></div>
+                <div id="case_info">
+                    <h1><img src="@Model.Item1.ImgSrc" width="180" height="120" alt="@Model.Item1.Name" /></h1>
+                    <ul>
+                        <li>名称：@Model.Item1.Name</li>
+                        <li>分类：@Model.Item1.CategoryId</li>
+                    </ul>
+                    <a href="javascript:;" class="btn_blue" target="_blank" rel="external nofollow">产品描述</a>
+                    <div class="brief">
+                        @Model.Item1.Description
+                    </div>
+                </div>
+            </div>
+            <div id="detailed">
+                @{
+                    foreach (var img in Model.Item2)
+                    {
+                        <img alt="" src="@img.ImgSrc" style="height: 378px; width: 700px;" />
+                    }
+                }
+            </div>
+        </div>
+    </article>
+    <div id="case_footer">
+        <div class="wrapper showother">
+            <a class="backlist" href="javascript:;" onclick="window.history.go(-1);">返回案例列表</a>
+
+        </div>
+    </div>
+</section>
+
+
+<script type="text/javascript" src="/Content/Scripts/jquery.plugin.min.js"></script>

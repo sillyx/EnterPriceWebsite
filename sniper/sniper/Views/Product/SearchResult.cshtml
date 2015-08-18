@@ -1,0 +1,18 @@
+﻿@model List<sniper.service.Models.Product>
+<ul class="cases wrapper">
+    @{
+        foreach (var item in Model)
+        {
+
+            <li class="item1">
+                <img src="@item.ImgSrc" width="240" height="152" alt="@item.Name" /> <strong>@item.Name</strong> 添加于:@item.CreateTime
+                <p>
+                    <strong>@item.Name</strong> <em>
+                        添加于:@item.CreateTime
+                    </em>@(item.Description.Length > 75 ? item.Description.Substring(0, 75) + "...." : item.Description)<br />
+                    <a href="/Product/Details?productId=@item.Id" class="btn_blue">查看品牌故事</a>
+                </p>
+            </li>
+        }
+    }
+</ul>

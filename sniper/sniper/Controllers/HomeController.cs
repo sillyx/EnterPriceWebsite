@@ -18,21 +18,11 @@ namespace sniper.Controllers
 
         public ActionResult Index()
         {
-            var news = new News
-            {
-                Id = Guid.NewGuid().ToString(),
-                Cont = "test",
-                CreateTime = DateTime.Now,
-                Title = "test"
-            };
-            var r = baseService.Insert<News>(news);
-            var list = new NewsService().GetList(1, 10);
-            foreach (var item in list)
-            {
-                item.Cont = "zyqTest";
-                baseService.Update<News>(item);
-            }
-            return View();
+            //查找15个产品和4条新闻
+            var product = new ProductService().GetList(1, 15);
+            var news = new NewsService().GetList(1, 4);
+            var model = Tuple.Create<List<Product>, List<News>>(product, news);
+            return View(model);
         }
 
     }
