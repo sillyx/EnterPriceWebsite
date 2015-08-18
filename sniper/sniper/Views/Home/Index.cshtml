@@ -3,133 +3,55 @@
     Layout = "~/Views/Shared/_LayoutHome.cshtml";
 }
 @model Tuple<List<sniper.service.Models.Product>, List<sniper.service.Models.News>>
+<style>
+    .flashBanner {
+        width: 1200px;
+        height: 326px;
+        overflow: hidden;
+        margin-top: 80px;
+    }
+
+    .flashBanner {
+        position: relative;
+    }
+
+        .flashBanner .mask {
+            height: 32px;
+            line-height: 32px;
+            background-color: #000;
+            width: 100%;
+            text-align: right;
+            position: absolute;
+            left: 0;
+            bottom: -32px;
+            filter: alpha(opacity=70);
+            -moz-opacity: 0.7;
+            opacity: 0.7;
+            overflow: hidden;
+        }
+
+            .flashBanner .mask img {
+                vertical-align: middle;
+                margin-right: 10px;
+                cursor: pointer;
+            }
+
+                .flashBanner .mask img.show {
+                    margin-bottom: 3px;
+                }
+</style>
 <!-- 查找最顶级栏目  -->
-<section id="banner">
-    <ul id="banner_img">
-        <li style="background-image:url(/Content/images/banner_bg1.jpg);display:block">
-            <div class="wrapper">
-                <div class="ad_txt">
-                    <h2>互联网品牌传播解决方案</h2>
-                    <p>
-                        成都顶级品牌网站建设公司！<br />
-                        基于互联网的品牌行销策略的策划与执行。<br />
-                        品牌形象挖掘、梳理、包装、表现与传播。<br />
-                        辅助企业实现品牌战略目标的互联网解决方案。
-                    </p>
-                </div>
-                <div class="ad_img"> <img src="/Content/images/1.png" width="506" height="404" alt="" /> </div>
-            </div>
-        </li>
-        <li style="background-image:url(/Content/images/banner_bg2.jpg);">
-            <div class="wrapper">
-                <div class="ad_txt">
-                    <h2>Web应用(B/S)定制开发</h2>
-                    <p>
-                        自主研发、完善的开发框架。<br />
-                        详细的需求调研及解决方案。<br />
-                        实施项目经验丰富的项目团队。
-                    </p>
-                </div>
-                <div class="ad_img"> <img src="/Content/images/2.png" width="506" height="404" alt="" /> </div>
-            </div>
-        </li>
-        <li style="background-image:url(/Content/images/banner_bg3.jpg);">
-            <div class="wrapper">
-                <div class="ad_txt">
-                    <h2>互联网时代的整合营销</h2>
-                    <p>
-                        基于互联网的品牌营销策略的定制与执行。<br />
-                        品牌形象挖掘、梳理、包装、表现与传播。<br />
-                        坐拥着最为丰富的行业经验与优势资源。
-                    </p>
-                </div>
-                <div class="ad_img"> <img src="/Content/images/3.png" width="506" height="404" alt="" /> </div>
-            </div>
-        </li>
-        <li style="background-image:url(/Content/images/banner_bg4.jpg);">
-            <div class="wrapper">
-                <div class="ad_txt">
-                    <h2>您的网站全职管家</h2>
-                    <p>
-                        成熟的监控与报警机制。<br />
-                        丰富的整合营销的能力和经验。<br />
-                        专业数据分析、开发和维护部门。
-                    </p>
-                </div>
-                <div class="ad_img"> <img src="/Content/images/4.png" width="506" height="404" alt="" /> </div>
-            </div>
-        </li>
-        <li style="background-image:url(/Content/images/banner_bg5.jpg);">
-            <div class="wrapper">
-                <div class="ad_txt">
-                    <h2>不可忽略的移动终端</h2>
-                    <p>
-                        IOS系统、Android系统应用开发。<br />
-                        App Store、Google Play 发布。<br />
-                        APP推广服务。
-                    </p>
-                </div>
-                <div class="ad_img"> <img src="/Content/images/5.png" width="506" height="404" alt="" /> </div>
-            </div>
-        </li>
-        <li style="background-image:url(/Content/images/banner_bg6.jpg);">
-            <div class="wrapper">
-                <div class="ad_txt">
-                    <h2>全新的学术会议体验</h2>
-                    <p>
-                        工作更高效，主办方更轻松。<br />
-                        线上报名，让主办方不再为报名的事而费尽脑筋。<br />
-                        线上投稿、审稿，为主办方提高收寄、审稿效率。<br />
-                        酒店预订，会议行程更加轻松。
-                    </p>
-                </div>
-                <div class="ad_img"> <img src="/Content/images/6.png" width="506" height="404" alt="" /> </div>
-            </div>
-        </li>
-        <li style="background-image:url(/Content/images/banner_bg7.jpg);">
-            <div class="wrapper">
-                <div class="ad_txt">
-                    <h2>医院网站管理系统(HMS)</h2>
-                    <p>
-                        与大型医院密切合作。<br />
-                        诊疗挂号很轻松，检验结果实时查询，在线医患服务。<br />
-                        便捷的数据处理能力，稳定的软件基础架构。
-                    </p>
-                </div>
-                <div class="ad_img"> <img src="/Content/images/7.png" width="506" height="404" alt="" /> </div>
-            </div>
-        </li>
-        <li style="background-image:url(/Content/images/banner_bg8.jpg);">
-            <div class="wrapper">
-                <div class="ad_txt">
-                    <h2>智慧点亮网络(RUIFOX-LAB)</h2>
-                    <p>
-                        互联网改变世界，我们改变互联网。<br />
-                        精彩前沿技术演练场。<br />
-                        新产品尝鲜体验。
-                    </p>
-                </div>
-                <div class="ad_img"> <img src="/Content/images/8.png" width="506" height="404" alt="" /> </div>
-            </div>
-        </li>
-    </ul>
-    <div id="banner_ctr">
-        <div id="drag_ctr"></div>
-        <ul>
-            <li class="first-item">网站建设</li>
-            <li>品牌网站建设</li>
-            <li>应用系统开发</li>
-            <li>网络整合营销</li>
-            <li>网络运维托管</li>
-            <li>手机APP开发</li>
-            <li>学术会议系统</li>
-            <li>医院网站系统</li>
-            <li>实验室</li>
-            <li class="last-item">网站设计</li>
-        </ul>
-        <div id="drag_arrow"></div>
+<div class="flashBanner">
+    <a href="http://www.17sucai.com/"><img class="bigImg" width="782" height="326" /></a>
+    <div class="mask">
+        <img src="http://www.17sucai.com/preview/91936/2014-02-22/jQuery%E5%B8%A6%E7%BC%A9%E7%95%A5%E5%9B%BE%E7%9A%84%E7%84%A6%E7%82%B9%E5%9B%BE%E5%B9%BB%E7%81%AF%E4%BB%A3%E7%A0%81/images/1.jpg" uri="http://www.17sucai.com/preview/91936/2014-02-22/jQuery%E5%B8%A6%E7%BC%A9%E7%95%A5%E5%9B%BE%E7%9A%84%E7%84%A6%E7%82%B9%E5%9B%BE%E5%B9%BB%E7%81%AF%E4%BB%A3%E7%A0%81/images/1.jpg" link="http://www.17sucai.com/" width="60" height="22" />
+        <img src="http://www.17sucai.com/preview/91936/2014-02-22/jQuery%E5%B8%A6%E7%BC%A9%E7%95%A5%E5%9B%BE%E7%9A%84%E7%84%A6%E7%82%B9%E5%9B%BE%E5%B9%BB%E7%81%AF%E4%BB%A3%E7%A0%81/images/2.jpg" uri="http://www.17sucai.com/preview/91936/2014-02-22/jQuery%E5%B8%A6%E7%BC%A9%E7%95%A5%E5%9B%BE%E7%9A%84%E7%84%A6%E7%82%B9%E5%9B%BE%E5%B9%BB%E7%81%AF%E4%BB%A3%E7%A0%81/images/2.jpg" link="http://www.17sucai.com/" width="60" height="22" />
+        <img src="http://www.17sucai.com/preview/91936/2014-02-22/jQuery%E5%B8%A6%E7%BC%A9%E7%95%A5%E5%9B%BE%E7%9A%84%E7%84%A6%E7%82%B9%E5%9B%BE%E5%B9%BB%E7%81%AF%E4%BB%A3%E7%A0%81/images/3.jpg" uri="http://www.17sucai.com/preview/91936/2014-02-22/jQuery%E5%B8%A6%E7%BC%A9%E7%95%A5%E5%9B%BE%E7%9A%84%E7%84%A6%E7%82%B9%E5%9B%BE%E5%B9%BB%E7%81%AF%E4%BB%A3%E7%A0%81/images/3.jpg" link="http://www.17sucai.com/" width="60" height="22" />
+        <img src="http://www.17sucai.com/preview/91936/2014-02-22/jQuery%E5%B8%A6%E7%BC%A9%E7%95%A5%E5%9B%BE%E7%9A%84%E7%84%A6%E7%82%B9%E5%9B%BE%E5%B9%BB%E7%81%AF%E4%BB%A3%E7%A0%81/images/4.jpg" uri="http://www.17sucai.com/preview/91936/2014-02-22/jQuery%E5%B8%A6%E7%BC%A9%E7%95%A5%E5%9B%BE%E7%9A%84%E7%84%A6%E7%82%B9%E5%9B%BE%E5%B9%BB%E7%81%AF%E4%BB%A3%E7%A0%81/images/4.jpg" link="http://www.17sucai.com/" width="60" height="22" />
+        <img src="http://www.17sucai.com/preview/91936/2014-02-22/jQuery%E5%B8%A6%E7%BC%A9%E7%95%A5%E5%9B%BE%E7%9A%84%E7%84%A6%E7%82%B9%E5%9B%BE%E5%B9%BB%E7%81%AF%E4%BB%A3%E7%A0%81/images/5.jpg" uri="http://www.17sucai.com/preview/91936/2014-02-22/jQuery%E5%B8%A6%E7%BC%A9%E7%95%A5%E5%9B%BE%E7%9A%84%E7%84%A6%E7%82%B9%E5%9B%BE%E5%B9%BB%E7%81%AF%E4%BB%A3%E7%A0%81/images/5.jpg" link="http://www.17sucai.com/" width="60" height="22" />
     </div>
-</section>
+</div>
+
 <section id="cases">
     <div class="cat_title wrapper">
         <h2>案例<strong>CASES</strong></h2>
@@ -268,4 +190,41 @@
     $("#cases>ul>li>img").lazyload({ effect: "fadeIn", failurelimit: 10 });
 
     //]]>
+    $(function () {
+        $(".flashBanner").each(function () {
+            var timer;
+            $(".flashBanner .mask img").click(function () {
+                var index = $(".flashBanner .mask img").index($(this));
+                changeImg(index);
+            }).eq(0).click();
+            $(this).find(".mask").animate({
+                "bottom": "0"
+            }, 700);
+            $(".flashBanner").hover(function () {
+                clearInterval(timer);
+            }, function () {
+                timer = setInterval(function () {
+                    var show = $(".flashBanner .mask img.show").index();
+                    if (show >= $(".flashBanner .mask img").length - 1)
+                        show = 0;
+                    else
+                        show++;
+                    changeImg(show);
+                }, 3000);
+            });
+            function changeImg(index) {
+                $(".flashBanner .mask img").removeClass("show").eq(index).addClass("show");
+                $(".flashBanner .bigImg").parents("a").attr("href", $(".flashBanner .mask img").eq(index).attr("link"));
+                $(".flashBanner .bigImg").hide().attr("src", $(".flashBanner .mask img").eq(index).attr("uri")).fadeIn("slow");
+            }
+            timer = setInterval(function () {
+                var show = $(".flashBanner .mask img.show").index();
+                if (show >= $(".flashBanner .mask img").length - 1)
+                    show = 0;
+                else
+                    show++;
+                changeImg(show);
+            }, 3000);
+        });
+    });
 </script>
