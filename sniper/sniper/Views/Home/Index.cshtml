@@ -5,9 +5,12 @@
 @model Tuple<List<sniper.service.Models.Product>, List<sniper.service.Models.News>>
 <style>
     .flashBanner {
-        width: 1200px;
+        width: 986px;
         height: 326px;
         overflow: hidden;
+        /*margin-top: 80px; 
+        text-align:center;*/
+        margin: 0 auto;
         margin-top: 80px;
     }
 
@@ -42,13 +45,13 @@
 </style>
 <!-- 查找最顶级栏目  -->
 <div class="flashBanner">
-    <a href="http://www.17sucai.com/"><img class="bigImg" width="782" height="326" /></a>
+    <a href="http://www.17sucai.com/"><img class="bigImg" width="986" height="326" /></a>
     <div class="mask">
-        <img src="http://www.17sucai.com/preview/91936/2014-02-22/jQuery%E5%B8%A6%E7%BC%A9%E7%95%A5%E5%9B%BE%E7%9A%84%E7%84%A6%E7%82%B9%E5%9B%BE%E5%B9%BB%E7%81%AF%E4%BB%A3%E7%A0%81/images/1.jpg" uri="http://www.17sucai.com/preview/91936/2014-02-22/jQuery%E5%B8%A6%E7%BC%A9%E7%95%A5%E5%9B%BE%E7%9A%84%E7%84%A6%E7%82%B9%E5%9B%BE%E5%B9%BB%E7%81%AF%E4%BB%A3%E7%A0%81/images/1.jpg" link="http://www.17sucai.com/" width="60" height="22" />
-        <img src="http://www.17sucai.com/preview/91936/2014-02-22/jQuery%E5%B8%A6%E7%BC%A9%E7%95%A5%E5%9B%BE%E7%9A%84%E7%84%A6%E7%82%B9%E5%9B%BE%E5%B9%BB%E7%81%AF%E4%BB%A3%E7%A0%81/images/2.jpg" uri="http://www.17sucai.com/preview/91936/2014-02-22/jQuery%E5%B8%A6%E7%BC%A9%E7%95%A5%E5%9B%BE%E7%9A%84%E7%84%A6%E7%82%B9%E5%9B%BE%E5%B9%BB%E7%81%AF%E4%BB%A3%E7%A0%81/images/2.jpg" link="http://www.17sucai.com/" width="60" height="22" />
-        <img src="http://www.17sucai.com/preview/91936/2014-02-22/jQuery%E5%B8%A6%E7%BC%A9%E7%95%A5%E5%9B%BE%E7%9A%84%E7%84%A6%E7%82%B9%E5%9B%BE%E5%B9%BB%E7%81%AF%E4%BB%A3%E7%A0%81/images/3.jpg" uri="http://www.17sucai.com/preview/91936/2014-02-22/jQuery%E5%B8%A6%E7%BC%A9%E7%95%A5%E5%9B%BE%E7%9A%84%E7%84%A6%E7%82%B9%E5%9B%BE%E5%B9%BB%E7%81%AF%E4%BB%A3%E7%A0%81/images/3.jpg" link="http://www.17sucai.com/" width="60" height="22" />
-        <img src="http://www.17sucai.com/preview/91936/2014-02-22/jQuery%E5%B8%A6%E7%BC%A9%E7%95%A5%E5%9B%BE%E7%9A%84%E7%84%A6%E7%82%B9%E5%9B%BE%E5%B9%BB%E7%81%AF%E4%BB%A3%E7%A0%81/images/4.jpg" uri="http://www.17sucai.com/preview/91936/2014-02-22/jQuery%E5%B8%A6%E7%BC%A9%E7%95%A5%E5%9B%BE%E7%9A%84%E7%84%A6%E7%82%B9%E5%9B%BE%E5%B9%BB%E7%81%AF%E4%BB%A3%E7%A0%81/images/4.jpg" link="http://www.17sucai.com/" width="60" height="22" />
-        <img src="http://www.17sucai.com/preview/91936/2014-02-22/jQuery%E5%B8%A6%E7%BC%A9%E7%95%A5%E5%9B%BE%E7%9A%84%E7%84%A6%E7%82%B9%E5%9B%BE%E5%B9%BB%E7%81%AF%E4%BB%A3%E7%A0%81/images/5.jpg" uri="http://www.17sucai.com/preview/91936/2014-02-22/jQuery%E5%B8%A6%E7%BC%A9%E7%95%A5%E5%9B%BE%E7%9A%84%E7%84%A6%E7%82%B9%E5%9B%BE%E5%B9%BB%E7%81%AF%E4%BB%A3%E7%A0%81/images/5.jpg" link="http://www.17sucai.com/" width="60" height="22" />
+        <img src="/Content/images/deal1.jpg" uri="/Content/images/deal1.jpg" width="60" height="22" />
+        <img src="/Content/images/deal2.jpg" uri="/Content/images/deal2.jpg" width="60" height="22" />
+        <img src="/Content/images/deal3.jpg" uri="/Content/images/deal3.jpg" width="60" height="22" />
+        <img src="/Content/images/deal1.jpg" uri="/Content/images/deal1.jpg" width="60" height="22" />
+        <img src="/Content/images/deal1.jpg" uri="/Content/images/deal1.jpg" width="60" height="22" />
     </div>
 </div>
 
@@ -88,7 +91,7 @@
         <a href="/News/Index" class="more">MORE+</a>
     </div>
     <div class="newsdata">
-        <div class="newsad"> <img src="/Content/images/news.png" alt="html5" width="320" height="485" /> </div>
+        <div class="newsad"> <img src="/Content/images/news.jpg" alt="html5" width="320" height="485" /> </div>
         <ul>
             @{
                 foreach (var n in Model.Item2)

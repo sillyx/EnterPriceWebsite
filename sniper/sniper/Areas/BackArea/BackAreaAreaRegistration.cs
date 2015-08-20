@@ -17,7 +17,7 @@ namespace sniper.Areas.BackArea
             context.MapRoute(
                 "BackArea_default",
                 "BackArea/{controller}/{action}/{id}",
-                new { control = "Product", action = "Index", id = UrlParameter.Optional },
+                new { controller = "SOS", action = "LoginOn", id = UrlParameter.Optional },
                 new string[] { "sniper.Areas.BackArea.Controllers" }
             );
         }

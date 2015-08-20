@@ -1,0 +1,70 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>LoginOn</title>
+    <link rel="stylesheet" type="text/css" href="/EasyUI/themes/default/easyui.css" /> 
+    <link rel="stylesheet" type="text/css" href="/EasyUI/themes/icon.css" />
+    <script type="text/javascript" src="/EasyUI/jquery.min.js"></script>
+    <script type="text/javascript" src="/EasyUI/jquery.easyui.min.js"></script>
+</head>
+<body>
+    <div id="w" class="easyui-window" title="管理员登陆" data-options="iconCls:'icon-save'" style="width:500px;height:200px;padding:10px;">
+        <table style="margin:0 auto;width:280px;">
+            <tr>
+                <td>User Name:</td>
+                <td><input class="easyui-validatebox" readonly="readonly" value="admin" /></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input class="easyui-validatebox" type="password" data-options="required:true" /></td>
+            </tr>
+        </table>
+        <div style="text-align:center;padding:25px">
+            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="logIn()">Submit</a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="clearForm()">Clear</a>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    $(function () {
+
+        $('input[type=password]').focus();
+    })
+    function clearForm() {
+        $('input[type=password]').val('');
+    }
+
+    function logIn() {
+        var password = $('input[type=password]').val();
+        if ($.trim(password).length > 0) {
+            $.post('@Url.Action("LogIn")', { password: password }, function (jResult) {
+                bottomRight(jResult.msg);
+                if (jResult.flag) {
+                    window.location.href = "/BackArea/Product/Index";
+                }
+            });
+        }
+    }
+
+    function bottomRight(msg) {
+        $.messager.show({
+            title: '登陆信息',
+            msg: msg,
+            showType: 'show'
+        });
+    }
+
+    document.onkeydown = function (event) {
+        e = event ? event : (window.event ? window.event : null);
+        if (e.keyCode == 13) {
+            logIn();
+        }
+    }
+</script>

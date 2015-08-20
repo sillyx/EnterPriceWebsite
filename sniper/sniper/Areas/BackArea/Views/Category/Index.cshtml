@@ -1,0 +1,103 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/BackArea/Views/Shared/_LayoutBackArea.cshtml";
+}
+<table id="dg" data-options="rownumbers:true,fit:true,singleSelect:false,pagination:true,url:'/BackArea/Category/GetList',method:'Post'">
+    <thead>
+        <tr>
+            <th field="ck" checkbox="true">
+            </th>
+            <th data-options="field:'Id',width:280,hidden:true">
+                编号
+            </th>
+            <th data-options="field:'Name',width:300">
+                分类名称
+            </th> 
+        </tr>
+    </thead>
+</table>
+<div id="w" class="easyui-window" title="新增商品" data-options="iconCls:'icon-save'" style="width:800px;height:500px;padding:10px;">
+    <form id="ff" method="post">
+        <table style="width:400px; margin:0 auto;">
+            <tr>
+                <td>产品名称:</td>
+                <td><input class="easyui-validatebox" type="text" name="Name" id="Name" data-options="required:true"></input></td>
+            </tr>
+        </table>
+    </form>
+    <div style="text-align:center;padding:10px">
+        <a href="javascript:void(0)" class="easyui-linkbutton" id="save" flag="add" onclick="submitForm()">Submit</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" onclick="clearForm()">Clear</a>
+    </div>
+</div>
+<script>
+    var currId;
+    $(function () {
+        $('#w').window('close'); 
+        var pager = $('#dg').datagrid().datagrid('getPager'); // get the pager of datagrid
+        pager.pagination({
+            pageSize: 10, //每页显示的记录条数，默认为10
+            pageList: [10, 15, 20], //可以设置每页记录条数的列表
+            beforePageText: '第', //页数文本框前显示的汉字
+            afterPageText: '页    共 {pages} 页',
+            displayMsg: '当前显示 {from} - {to} 条记录   共 {total} 条记录',
+            buttons: [{
+                text: '添加',
+                iconCls: 'icon-add',
+                handler: function () {
+                    $('#w').window('open');
+                    $('#save').attr('flag', 'add');
+                    currId = '';
+                }
+            }, {
+                text: '<a href="javascript:;" style="color: #444;text-decoration: none;" title="只能编辑单条用户信息！" class="easyui-tooltip tooltip-f">编辑</a>',
+                iconCls: 'icon-edit',
+                handler: function () {
+                    var selected = $("#dg").datagrid("getSelected");
+                    if (null != selected) {
+                        $('#w').window('open');
+                        $('#save').attr('flag', 'edit');
+                        currId = selected.Id;
+                        $('#Name').val(selected.Name);
+                    }
+                }
+            },
+            {
+                text: '删除',
+                iconCls: 'icon-delete',
+                handler: function () {
+                    var checkedItems = $('#dg').datagrid('getChecked');
+                    var names = [];
+                    $.each(checkedItems, function (index, item) {
+                        names.push(item.Id);
+                    });
+                    var ids = names.join(",");
+                    if (names.length > 0 && confirm("确定删除吗？")) {
+                        $.post('@Url.Action("DeleteItems", "Category")', { idList: ids }, function (data) {
+                            if (data.flag) {
+                                bottomRight("提示", "操作成功,共" + data.count + "条！");
+                                $('#dg').datagrid('reload');
+                            }
+                            else
+                                bottomRight("提示", "删除失败，请重试！");
+                        });
+                    }
+                }
+            }]
+        });
+    })
+    function submitForm() {
+        if ($('#Name').val().length > 0) {
+            $.post('@Url.Action("Edit")', { Id: currId, Name: $('#Name').val() }, function (data) {
+                bottomRight("提示", data.msg);
+                if (data.flag) {
+                    $('#w').window('close');
+                    $('#dg').datagrid('reload');
+                }
+            });
+        }
+    }
+    function clearForm() {
+        $('#Name').val('');
+    }
+</script>

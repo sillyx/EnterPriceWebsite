@@ -18,8 +18,9 @@ namespace sniper.Controllers
 
         public ActionResult Index()
         {
+            var total = 0;
             //查找15个产品和4条新闻
-            var product = new ProductService().GetList(1, 15);
+            var product = new ProductService().GetList(1, 15, out total);
             var news = new NewsService().GetList(1, 4);
             var model = Tuple.Create<List<Product>, List<News>>(product, news);
             return View(model);

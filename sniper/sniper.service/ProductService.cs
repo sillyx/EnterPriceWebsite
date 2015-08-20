@@ -8,7 +8,7 @@ namespace sniper.service
 {
     public class ProductService
     {
-        public List<model.Product> GetList(int page, int size)
+        public List<model.Product> GetList(int page, int size, out int total)
         {
             var sql = "select * from Product order by CreateTime DESC";
             List<model.Product> list = new List<model.Product>();
@@ -28,6 +28,7 @@ namespace sniper.service
                     list.Add(product);
                 }
             }
+            total = list.Count;
             return list.Skip(size * (page - 1)).Take(size).ToList();
         }
 
@@ -66,6 +67,7 @@ namespace sniper.service
                 while (sReader.Read())
                 {
                     product.Id = sReader["Id"].ToString();
+                    product.CategoryId = sReader["CategoryId"].ToString();
                     product.Name = sReader["Name"].ToString();
                     product.Description = sReader["Description"].ToString();
                     product.ImgSrc = sReader["ImgSrc"].ToString();

@@ -27,7 +27,8 @@ namespace sniper.Controllers
             var productList = new List<Product>();
             if (string.IsNullOrEmpty(categoryId))
             {
-                productList = productService.GetList(1, int.MaxValue);
+                var total = 0;
+                productList = productService.GetList(1, int.MaxValue, out total);
             }
             else
                 productList = productService.GetListByCategory(categoryId);

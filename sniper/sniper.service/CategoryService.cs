@@ -16,7 +16,7 @@ namespace sniper.service
                 {
                     var category = new model.Category();
                     category.Id = sReader["Id"].ToString();
-                    category.Name = sReader["Cont"].ToString();
+                    category.Name = sReader["Name"].ToString();
                     list.Add(category);
                 }
             }

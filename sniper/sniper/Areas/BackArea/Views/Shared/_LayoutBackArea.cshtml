@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="@Url.Content("~/EasyUi/themes/default/easyui.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/EasyUi/themes/icon.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/EasyUi/demo/demo.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/EasyUi/jquery.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/EasyUi/jquery.easyui.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/Scripts/Cookies.js")" type="text/javascript"></script>
+    <title>@ViewBag.Title</title>
+</head>
+<body class="easyui-layout">
+    <div data-options="region:'north',border:false" style="height: 74px; background: #2596ea;
+        padding: 10px; text-align: right;">
+        <font color="#FFF">你好，admin</font>&nbsp;&nbsp; <a id="logout" style="text-decoration:none;color:#FFF;" href="@Url.Action("Index", "Home", new { Area = "" })">
+            [返回前台]
+        </a>
+    </div>
+    <div data-options="region:'south',border:false" style="height: 23px;">
+        <div class="footer">
+            <center>
+                Copyright 2015 All Rights Reserved 爱优品
+            </center>
+        </div>
+    </div>
+    <div data-options="region:'west',split:true" title="功能区域" style="width: 300px;">
+        <div class="easyui-accordion" id="myaccrdion" fit="true" border="true" style="width: 290px;">
+            <div title="功能菜单" data-options="iconCls:'icon-ok'" style="overflow: auto; padding: 10px;">
+                <a href='@Url.Action("Index", "Category")' class="easyui-linkbutton" plain="true" iconcls="icon-group_link">分类管理</a><br>
+                <a href='@Url.Action("Index", "Product")' class="easyui-linkbutton" plain="true" iconcls="icon-group_link">产品管理</a><br>
+            </div>
+        </div>
+    </div>
+    <div data-options="region:'center',title:'内容区域',iconCls:'icon-home'" id="actionArea">
+        @RenderBody()
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
+    function bottomRight(title,msg) {
+        $.messager.show({
+            title: title,
+            msg: msg,
+            showType: 'show'
+        });
+    }
+    $(function () {
+        $('#myaccrdion').accordion();
+        var index = Cookies.get("index");
+        index = index || 2;
+        $('#myaccrdion').accordion('select', parseInt(index))//默认展开项
+
+        //        $(window).bind('hashchange', function () {
+        //            var hashurl = window.location.hash;
+        //            if (hashurl != '') {
+        //                $('#actionarea').html('');
+        //                //$('#actionarea').load('Brand/Test')
+        //            }
+        //        });
+        //        $(window).trigger('hashchange');
+    })
+
+    function setIndex(index) {
+        Cookies.set("index", index);
+    }
+    var common = {
+        //EasyUI用DataGrid用日期格式化
+        timeFormatter: function (value, rec, index) {
+            if (value == undefined) {
+                return "";
+            }
+            var date = new Date(eval(value.replace(/\/Date\((\d+)\)\//gi, "new Date($1)")));
+            return (date.getFullYear() + "-" + parseInt(date.getMonth() + 1) + "-" + date.getDate() + " " + (date.getHours().toString().length > 1 ? date.getHours() : ("0" + date.getHours())) + ":" + (date.getMinutes().toString().length > 1 ? date.getMinutes() : ("0" + date.getMinutes())) + ":" + (date.getSeconds().toString().length > 1 ? date.getSeconds() : ("0" + date.getSeconds())));
+        }
+
+    };
+</script>
