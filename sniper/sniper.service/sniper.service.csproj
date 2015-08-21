@@ -49,6 +49,7 @@
     <Compile Include="CategoryService.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="ImageHelper.cs" />
+    <Compile Include="ImageListService.cs" />
     <Compile Include="Models\AboutUs.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\ImageList.cs" />

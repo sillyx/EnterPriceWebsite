@@ -13,7 +13,8 @@ namespace sniper.Controllers
         public ActionResult Index()
         {
             var newsService = new NewsService();
-            var model = newsService.GetList(1, int.MaxValue);
+            var total = 0;
+            var model = newsService.GetList(1, int.MaxValue, out total);
             return View(model);
         }
 
@@ -22,6 +23,7 @@ namespace sniper.Controllers
             var news = new NewsService().Details(id);
             return View(news);
         }
+
 
     }
 }

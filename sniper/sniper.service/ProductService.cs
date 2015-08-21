@@ -60,8 +60,7 @@ namespace sniper.service
         {
             var sqlProduct = "select * from Product where Id='" + id + "'";
             var sqlImgList = "select * from ImageList where ProductId='" + id + "'";
-            var product = new model.Product();
-            var imgList = new List<model.ImageList>();
+            var product = new model.Product(); 
             using (var sReader = SqlDBHelper.ExecuteReader(sqlProduct))
             {
                 while (sReader.Read())
@@ -88,7 +87,7 @@ namespace sniper.service
                     list.Add(img);
                 }
             }
-            return Tuple.Create<model.Product, List<model.ImageList>>(product, imgList);
+            return Tuple.Create<model.Product, List<model.ImageList>>(product, list);
         }
     }
 }

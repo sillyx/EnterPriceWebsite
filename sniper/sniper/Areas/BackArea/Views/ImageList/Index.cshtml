@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/BackArea/Views/Shared/_LayoutBackArea.cshtml";
+}
+<table id="dg" data-options="rownumbers:true,fit:true,singleSelect:false,pagination:true,url:'/BackArea/ImageList/GetList?productId=@ViewBag.productId',method:'Post'">
+    <thead>
+        <tr>
+            <th field="ck" checkbox="true">
+            </th>
+            <th data-options="field:'Id',width:280,hidden:true">
+                编号
+            </th>
+            <th data-options="field:'ImgSrc',width:300,formatter:showImg">
+                图片
+            </th>
+        </tr>
+    </thead>
+</table>
+<script>
+    var currId;
+    $(function () {
+        $('#w').window('close');
+        var pager = $('#dg').datagrid().datagrid('getPager'); // get the pager of datagrid
+        pager.pagination({
+            pageSize: 10, //每页显示的记录条数，默认为10
+            pageList: [10, 15, 20], //可以设置每页记录条数的列表
+            beforePageText: '第', //页数文本框前显示的汉字
+            afterPageText: '页    共 {pages} 页',
+            displayMsg: '当前显示 {from} - {to} 条记录   共 {total} 条记录',
+            buttons: [
+            {
+                text: '删除',
+                iconCls: 'icon-delete',
+                handler: function () {
+                    var checkedItems = $('#dg').datagrid('getChecked');
+                    var names = [];
+                    $.each(checkedItems, function (index, item) {
+                        names.push(item.Id);
+                    });
+                    var ids = names.join(",");
+                    if (names.length > 0 && confirm("确定删除吗？")) {
+                        $.post('@Url.Action("DeleteItems", "ImageList")', { idList: ids }, function (data) {
+                            if (data.flag) {
+                                bottomRight("提示", "操作成功,共" + data.count + "条！");
+                                $('#dg').datagrid('reload');
+                            }
+                            else
+                                bottomRight("提示", "删除失败，请重试！");
+                        });
+                    }
+                }
+            }, {
+                text: '<a href="javascript:;" style="color: #444;text-decoration: none;">添加</a>',
+                iconCls: 'icon-add',
+                handler: function () {
+                    window.open('/BackArea/ImageList/Upload?id=@ViewBag.productId');
+                }
+            }]
+        });
+    })
+    function showImg(val, row) {
+        if (val !== null || val !== undefined || val !== '') {
+            return '<img width=60 height=60 src=' + val + '>';
+        }
+        else
+            return '<img width=60 height=60 src=' + val + '>';
+    }
+</script>

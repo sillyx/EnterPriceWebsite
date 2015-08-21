@@ -90,27 +90,27 @@ namespace sniper.service
                 return "files/uploadimages/origin/";
             }
         }
-        public string SmallHeaderImagePath
-        {
-            get
-            {
-                return "files/uploadimages/60x60/";
-            }
-        }
+        //public string SmallHeaderImagePath
+        //{
+        //    get
+        //    {
+        //        return "files/uploadimages/60x60/";
+        //    }
+        //}
         public string MiddleHeaderImagePath
         {
             get
             {
-                return "files/uploadimages/180x255/";
+                return "files/uploadimages/240x152/";
             }
         }
-        public string LargeHeaderImagePath
-        {
-            get
-            {
-                return "files/uploadimages/280x234/";
-            }
-        }
+        //public string LargeHeaderImagePath
+        //{
+        //    get
+        //    {
+        //        return "files/uploadimages/280x234/";
+        //    }
+        //}
 
         public Dictionary<string, ThumbImage> HeaderImageSizes
         {
@@ -118,9 +118,9 @@ namespace sniper.service
             {
                 Dictionary<string, ThumbImage> list = new Dictionary<string, ThumbImage>();
 
-                list.Add("small", new ThumbImage(60, 60, "files/uploadimages/60x60"));
-                list.Add("middle", new ThumbImage(175, 242, "files/uploadimages/180x255"));
-                list.Add("largest", new ThumbImage(280, 234, "files/uploadimages/280x234"));
+                //list.Add("small", new ThumbImage(60, 60, "files/uploadimages/60x60"));
+                list.Add("middle", new ThumbImage(240, 152, "files/uploadimages/240x152"));
+                //list.Add("largest", new ThumbImage(280, 234, "files/uploadimages/280x234"));
                 return list;
             }
         }

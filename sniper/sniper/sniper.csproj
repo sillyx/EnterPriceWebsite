@@ -114,6 +114,8 @@
     <Compile Include="Areas\BackArea\BackAreaAreaRegistration.cs" />
     <Compile Include="Areas\BackArea\Controllers\AboutUsController.cs" />
     <Compile Include="Areas\BackArea\Controllers\CategoryController.cs" />
+    <Compile Include="Areas\BackArea\Controllers\ImageListController.cs" />
+    <Compile Include="Areas\BackArea\Controllers\NewsController.cs" />
     <Compile Include="Areas\BackArea\Controllers\ProductController.cs" />
     <Compile Include="Areas\BackArea\Controllers\ServiceController.cs" />
     <Compile Include="Areas\BackArea\Controllers\SolutionController.cs" />
@@ -128,6 +130,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="swfupload\upload.ashx.cs">
+      <DependentUpon>upload.ashx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -2005,6 +2010,15 @@
     <Content Include="kindeditor-4.1.10\themes\qq\qq.css" />
     <Content Include="kindeditor-4.1.10\themes\simple\simple.css" />
     <Content Include="sniper.sql" />
+    <Content Include="swfupload\css\css.css" />
+    <Content Include="swfupload\css\default.css" />
+    <Content Include="swfupload\js\filegroupprogress.js" />
+    <Content Include="swfupload\js\fileprogress.js" />
+    <Content Include="swfupload\js\handlers.js" />
+    <Content Include="swfupload\js\swfupload.queue.js" />
+    <Content Include="swfupload\js\swfupload.speed.js" />
+    <Content Include="swfupload\swfupload\swfupload.js" />
+    <Content Include="swfupload\swfupload\swfupload.swf" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -2118,6 +2132,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\BackArea\Views\Service\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BackArea\Views\ImageList\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BackArea\Views\ImageList\Upload.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="swfupload\upload.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BackArea\Views\News\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

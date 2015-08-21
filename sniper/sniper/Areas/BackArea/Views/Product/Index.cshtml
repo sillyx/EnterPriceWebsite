@@ -7,8 +7,8 @@
         <tr>
             <th field="ck" checkbox="true">
             </th>
-            <th data-options="field:'Id',width:280,formatter:imgList">
-                编号
+            <th data-options="field:'Id',width:200,formatter:imgList">
+                预览
             </th>
             <th data-options="field:'Name',width:300">
                 产品名称
@@ -236,8 +236,8 @@
         });
     }*@
 
-    function imgList(val) {
-        var a = "<a href='/ImageList/Index?productId=" + val + "'/>图片列表</a>";
-        return a;
+    function imgList(val, row, index) {
+        return '<a href="/BackArea/ImageList/Index?productId=' + val + '">图片列表</a>';
+       // return a;
     }
 </script>

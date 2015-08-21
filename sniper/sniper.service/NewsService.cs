@@ -7,7 +7,7 @@ namespace sniper.service
 {
     public class NewsService
     {
-        public List<News> GetList(int page, int size)
+        public List<News> GetList(int page, int size, out int total)
         {
             var sql = "select * from News order by CreateTime DESC";
             List<News> list = new List<News>();
@@ -25,6 +25,7 @@ namespace sniper.service
                     list.Add(news);
                 }
             }
+            total = list.Count;
             return list.Skip(size * (page - 1)).Take(size).ToList();
         }
 
