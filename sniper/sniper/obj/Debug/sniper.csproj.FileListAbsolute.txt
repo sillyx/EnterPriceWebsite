@@ -76,3 +76,4 @@ C:\Users\Administrator\Desktop\EnterPriceWebsite\sniper\sniper\bin\zh-Hans\Syste
 C:\Users\Administrator\Desktop\EnterPriceWebsite\sniper\sniper\obj\Debug\sniper.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\Desktop\EnterPriceWebsite\sniper\sniper\obj\Debug\sniper.dll
 C:\Users\Administrator\Desktop\EnterPriceWebsite\sniper\sniper\obj\Debug\sniper.pdb
+C:\Users\Administrator\Desktop\EnterPriceWebsite\sniper\sniper\bin\LitJson.dll

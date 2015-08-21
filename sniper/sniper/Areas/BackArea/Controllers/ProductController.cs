@@ -54,7 +54,8 @@ namespace sniper.Areas.BackArea.Controllers
             var total = 0;
             var pro = pService.GetList(1, int.MaxValue, out total).FirstOrDefault(x => x.Id == product.Id);
             product.CreateTime = pro.CreateTime;
-            product.CategoryId = Request.Form["CategoryId"];
+            if (product.CategoryId.Length < 36)
+                product.CategoryId = pro.CategoryId; //Request.Form["CategoryId"];
             if (new BaseService().Update<Product>(product))
                 return Json(new { flag = true, msg = "修改成功！" });
             return Json(new { flag = false, msg = "修改失败" });

@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/BackArea/Views/Shared/_LayoutBackArea.cshtml";
+}
+@model sniper.service.Models.Service
+    <link rel="stylesheet" href="/kindeditor-4.1.10/themes/default/default.css" />
+    <link rel="stylesheet" href="/kindeditor-4.1.10/plugins/code/prettify.css" />
+    <script charset="utf-8" src="/kindeditor-4.1.10/kindeditor.js"></script>
+    <script charset="utf-8" src="/kindeditor-4.1.10/lang/zh_CN.js"></script>
+    <script charset="utf-8" src="/kindeditor-4.1.10/plugins/code/prettify.js"></script>
+    <script>
+        var id = '@Model.Id';
+        KindEditor.ready(function (K) {
+            var editor1 = K.create('#content1', {
+                cssPath: '/kindeditor-4.1.10/plugins/code/prettify.css',
+                uploadJson: '/kindeditor-4.1.10/asp.net/upload_json.ashx',
+                fileManagerJson: '/kindeditor-4.1.10/asp.net/file_manager_json.ashx',
+                allowFileManager: true,
+                afterCreate: function () {
+                    var self = this;
+                    K.ctrl(document, 13, function () {
+                        self.sync();
+                        //K('form[name=example]')[0].submit();
+                        $.post('@Url.Action("Edit")', { Id: id, Cont: editor1.html() }, function (data) {
+                            if (data.res) {
+                                bottomRight("提示", "操作成功！");
+                            }
+                            else
+                                bottomRight("提示", "操作失败！");
+                        });
+                    });
+                    K.ctrl(self.edit.doc, 13, function () {
+                        self.sync();
+                        //K('form[name=example]')[0].submit();
+                        $.post('@Url.Action("Edit")', { Id: id, Cont: editor1.html() }, function (data) {
+                            if (data.res) {
+                                bottomRight("提示", "操作成功！");
+                            }
+                            else
+                                bottomRight("提示", "操作失败！");
+                        });
+                    });
+                }
+            });
+            prettyPrint();
+        });
+    </script>
+    <form id="example">
+        <textarea id="content1" cols="100" rows="8" style="width:700px;height:500px;visibility:hidden;">@Model.Cont</textarea>
+        <br />
+        <asp:Button ID="Button1" runat="server" Text="提交内容" /> (提交快捷键: Ctrl + Enter)
+    </form>

@@ -7,7 +7,7 @@
         <tr>
             <th field="ck" checkbox="true">
             </th>
-            <th data-options="field:'Id',width:280,hidden:true">
+            <th data-options="field:'Id',width:280,formatter:imgList">
                 编号
             </th>
             <th data-options="field:'Name',width:300">
@@ -55,12 +55,12 @@
                         @{
                             foreach (var category in ViewBag.categories)
                             {
-                                <option value="@category.Id">@category.Name</option>
+                                <option name="CategoryId" value="@category.Id">@category.Name</option>
                             }
                         }
                     </select>
                 </td>
-            </tr> 
+            </tr>
         </table>
         <input type="hidden" name="Id" id="Id" />
     </form>
@@ -149,7 +149,7 @@
                         currId = selected.Id;
                         $('#Id').val(currId);
                         $('#Name').val(selected.Name);
-                        $('#CategoryId').combobox('setValue',selected.CategoryId);
+                        $('#CategoryId').combobox('setValue', selected.CategoryId);
                         $('#Description').val(selected.Description);
                         $('#ImgSrc').val(selected.ImgSrc);
                         $('#proImg').attr('src', selected.ImgSrc);
@@ -201,8 +201,8 @@
         //        alert($(this).attr('name'));
         //    }
         //});
-        if($('#Name').val()==''||$('#ImgSrc').val()==''||$('#Description').val()=='')
-            flag=true;
+        if ($('#Name').val() == '' || $('#ImgSrc').val() == '' || $('#Description').val() == '')
+            flag = true;
         if (!flag) {
             var fl = $('#save').attr('flag');
             if (fl == 'add') {
@@ -235,4 +235,9 @@
             return data;
         });
     }*@
+
+    function imgList(val) {
+        var a = "<a href='/ImageList/Index?productId=" + val + "'/>图片列表</a>";
+        return a;
+    }
 </script>
